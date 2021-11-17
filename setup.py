@@ -14,19 +14,8 @@ with open('README.md', 'r') as f:
 # package configuration - for reference see:
 # https://setuptools.readthedocs.io/en/latest/setuptools.html#id9
 setup(
-    name=about['__title__'],
-    description=about['__description__'],
-    # long_description=readme,
-    # long_description_content_type='text/markdown',
-    version=about['__version__'],
     author=about['__author__'],
     author_email=about['__author_email__'],
-    url=about['__url__'],
-    packages=['pyfunctools'],
-    include_package_data=True,
-    python_requires=">=3.7.*",
-    license=about['__license__'],
-    zip_safe=False,
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
@@ -34,5 +23,21 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
-    keywords='package tools functional development'
+    description=about['__description__'],
+    include_package_data=True,
+    keywords='package tools functional development',
+    license=about['__license__'],
+    long_description=readme,
+    long_description_content_type='text/markdown',
+    name=about['__title__'],
+    packages=['pyfunctools'],
+    project_urls={
+        'Documentation': 'https://pyfunctools.readthedocs.io/en/latest/install.html',
+        'Source': 'https://github.com/natanfeitosa/pyfunctools/',
+        'Tracker': 'https://github.com/natanfeitosa/pyfunctools/issues',
+    },
+    python_requires=">=3.7",
+    url=about['__url__'],
+    version=about['__version__'],
+    zip_safe=False,
 )

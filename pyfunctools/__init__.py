@@ -7,7 +7,7 @@ Pyfunctools is a module that provides functions, methods and classes that help i
 
 MAJOR = 0
 MINOR = 1
-PATCH = 0
+PATCH = 1
 
 def get_version(release:bool=False):
     """Get simple version or full version/release of pyfunc
@@ -37,12 +37,6 @@ from .foreach import forEach
 from .map import map
 from .reduce import reduce
 
-# all = [
-#     'map',
-#     'forEach',
-#     'reduce',
-#     'Array'
-# ]
 
 class Array(object):
     """Class that has common methods in arrays that are not present in the builtin list class.
