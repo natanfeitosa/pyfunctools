@@ -2,12 +2,10 @@
 Installation
 ============
 
-Via PIP (recommended):
-.. code-block:: bash
+Via PIP (recommended)::
     pip install pyfunctools
 
-Via GitHub:
-.. code-block:: bash
+Via GitHub::
     git clone https://github.com/natanfeitosa/pyfunctools.git && cd pyfunctools && pip install .
 
 Or the command line:
