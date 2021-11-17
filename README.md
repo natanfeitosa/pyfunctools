@@ -1,20 +1,20 @@
-# Pyfunc
+# Pyfunctools
 
-Pyfunc is a module that provides functions, methods and classes that help in the creation of projects in python, bringing functional and object-oriented programming methods.
+Pyfunctools is a module that provides functions, methods and classes that help in the creation of projects in python, bringing functional and object-oriented programming methods.
 
-[![Documentation Status](https://readthedocs.org/projects/pyfunc/badge/?version=latest)](https://pyfunc.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/pyfunctools/badge/?version=latest)](https://pyfunctools.readthedocs.io/en/latest/?badge=latest)
 
 
 ## Instalation
 
 Via PIP (recommended):
 ```sh
-pip install pyfunc
+pip install pyfunctools
 ```
 
 Via GitHub:
 ```sh
-git clone https://github.com/natanfeitosa/pyfunc.git && cd pyfunc && pip install .
+git clone https://github.com/natanfeitosa/pyfunctools.git && cd pyfunctools && pip install .
 ```
 
 ## Development
