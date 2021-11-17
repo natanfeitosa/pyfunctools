@@ -3,6 +3,9 @@
 Pyfunctools is a module that provides functions, methods and classes that help in the creation of projects in python, bringing functional and object-oriented programming methods.
 
 [![Documentation Status](https://readthedocs.org/projects/pyfunctools/badge/?version=latest)](https://pyfunctools.readthedocs.io/en/latest/?badge=latest)
+[![Python versions](https://img.shields.io/pypi/pyversions/pyfunctools.svg)](https://pypi.python.org/pypi/pyfunctools/)
+[![PyPI](https://img.shields.io/pypi/v/pyfunctools.svg)](https://pypi.python.org/pypi/pyfunctools/)
+[![GitHub stars](https://img.shields.io/github/stars/natanfeitosa/pyfunctools.svg)](https://github.com/natanfeitosa/python-pyfunctools/stargazers)
 
 
 ## Instalation
