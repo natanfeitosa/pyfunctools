@@ -20,7 +20,7 @@ Via GitHub:
 ```sh
 git clone https://github.com/natanfeitosa/pyfunctools.git && cd pyfunctools && pip install .
 ```
-
+<!-- 
 ## Development
 
 > Makefile commands so far only available for linux
@@ -35,4 +35,4 @@ To create the documentation based on the docstrings, just run ```make gen_docs``
 
 Test the HTML documentation locally with the ```make server``` command.
 
-The ```make all``` command runs the last two automatically.
+The ```make all``` command runs the last two automatically. -->

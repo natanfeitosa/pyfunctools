@@ -6,8 +6,8 @@ Pyfunctools is a module that provides functions, methods and classes that help i
 """
 
 MAJOR = 0
-MINOR = 1
-PATCH = 1
+MINOR = 3
+PATCH = 0
 
 def get_version(release:bool=False):
     """Get simple version or full version/release of pyfunc
@@ -36,6 +36,7 @@ from .filter import filter
 from .foreach import forEach
 from .map import map
 from .reduce import reduce
+from .utils import is_equal
 
 
 class Array(object):
@@ -97,7 +98,12 @@ class Array(object):
 
     def __repr__(self) -> str:
         repr = '<Array values={} >'
-        return repr.format(self._values)
+        return repr.format(self)
+
+    def __eq__(self, other):
+        if not Array.is_array(other):
+            return False
+        return is_equal(self.to_list(), other.to_list())
 
     def __getitem__(self, index):
         return self._values[index]
@@ -126,6 +132,20 @@ class Array(object):
             return result
         else:
             raise StopIteration
+    
+    def append(self, x:any):
+        """Append a new item with value x to the end of the Array.
+
+        Args:
+            x ( any ) : object to add
+
+        Examples:
+            >>> array = Array(1, 2, 3)
+            >>> array.append(4)
+            >>> array.to_list()
+            [1, 2, 3, 4]
+        """
+        return self._values.append(x)
 
     def chunk(self, size:int=1) -> List[list]:
         """Divides the Array object into sublists.
@@ -146,6 +166,14 @@ class Array(object):
             [[1, 2, 3], [4, 5, 6]]
         """
         return chunk(self._values, size)
+    
+    def clone(self):
+        """Clone this array instance
+
+        Returns:
+            Array : A new array
+        """
+        return Array(**self)
 
     def concat(self, *args):
         """Concatenate into Array
@@ -171,6 +199,20 @@ class Array(object):
             self._values.append(i)
         
         return self
+    
+    def count(self, x:any) -> int:
+        """Return the number of times x appears in the array.
+        
+        Examples:
+            >>> Array(1, 2, 3).count(1)
+            1
+            >>> Array(2, 0, 2, 2).count(2)
+            3
+            >>> Array(2, 0, 0, 2).count(1)
+            0
+        """
+
+        return self._values.count(x)
 
     def fill(self, fill_with:any):
         """Replaces/fill the values in the array without changing the len
@@ -220,6 +262,41 @@ class Array(object):
         """
         return forEach(self, func)
 
+    def includes(self, item:any) -> bool:
+        """Test if an item exists in this Array
+
+        Args:
+            item ( any ) : Item to test
+
+        Examples:
+            >>> array = Array(1, 2, 3)
+            >>> array.includes(4)
+            False
+            >>> array.includes(1)
+            True
+        """
+        return item in self._values
+    
+    def index_of(self, obj: any) -> int:
+        """The method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+
+        Args:
+            obj ( any ) : Element to locate in the array.
+        
+        Returns:
+            int : -1 if not exists in the array
+        
+        Examples:
+            >>> array = Array(1, 2, 3)
+            >>> array.index_of(4)
+            -1
+            >>> array.index_of(1)
+            0
+        """
+        if self.includes(obj):
+            return self._values.index(obj)
+        return -1
+
     def map(self, func) -> list:
         """Function to create a new list based on callback function return
         
@@ -232,6 +309,23 @@ class Array(object):
             [2, 4]
         """
         return map(self, func)
+    
+    def pop(self, pos:int=-1) -> any:
+        """Removes the element at the specified position.
+
+        Args:
+            pos ( int, -1 ) : Position of the element to be removed and returned.
+        
+        Examples:
+            >>> array = Array(1, 2, 3)
+            >>> array.pop()
+            3
+            >>> array.pop(0)
+            1
+            >>> array
+            <Array values=[2] >
+        """
+        return self._values.pop(pos)
 
     def reduce(self, func, initial=[]):
         """Function to create a new object based on callback function return
@@ -258,6 +352,55 @@ class Array(object):
             if the callback function never returns anything, reduce will return the initial value itself
         """
         return reduce(self, func, initial)
+    
+    def repetitions(self) -> dict:
+        """Parses and returns all repetitions in the array.
+
+        Returns:
+            dict : A dictionary of type item: int(repetitions)
+        
+        Examples:
+            >>> Array(*'Pyfunctools').repetitions()
+            {"P": 1, "y": 1, "f": 1, "u": 1, "n": 1, "c": 1, "t": 1, "o": 2, "l": 1, "s": 1}
+            >>> Array(*'Python').repetitions()
+            {"P": 1, "y": 1, "t": 1, "h": 1, "o": 1, "n": 1}
+        """
+        def func(acc, item, _):
+            try:
+                _n = acc[item]
+            except:
+                _n = 0
+            acc[item] = _n + 1
+            return acc
+
+        return self.reduce(func, {})
+
+    def reverse(self):
+        """Reverses the sorting order of the elements.
+
+        Examples:
+            >>> array = Array(1, 2, 3)
+            >>> array.reverse()
+            >>> array
+            <Array values=[3, 2, 1] >
+        """
+        return self._values.reverse()
+    
+    def shift(self):
+        """Removes the first element from an array and returns that removed element.
+
+        Examples:
+            >>> array = Array(1, 2, 3)
+            >>> array.shift()
+            1
+            >>> array
+            <Array values=[2, 3] >
+            >>> array.shift()
+            2
+            >>> array
+            <Array values=[3] >
+        """
+        return self.pop(0)
 
     def to_list(self) -> list:
         """Convert the array object to the builtin type list.
@@ -266,3 +409,14 @@ class Array(object):
             If you prefer you can use list compression on the Array instance
         """
         return list(self)
+
+    def unshift(self, *args):
+        """Adds one or more elements to the beginning of an array and returns a array modified."""
+        _args = [a for a in args]
+
+        self._values = [
+            *_args,
+            *self._values
+        ]
+
+        return self

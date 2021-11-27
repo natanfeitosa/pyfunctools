@@ -1,6 +1,7 @@
 from typing import Union
 from re import search
 
+
 NUM_RE = '([0-9])(\\.[0-9])?'
 
 def to_num(obj: any) -> Union[int, float]:
@@ -156,3 +157,68 @@ def is_num(obj: any) -> bool:
         False
     """
     return bool(is_float(obj) or is_int(obj) or search(NUM_RE, str(obj)))
+
+
+def is_equal(obj1, obj2) -> bool:
+    """Recursive function that checks if two parameters are equal
+
+    Examples:
+        >>> is_equal(1, 1)
+        True
+        >>> is_equal('{}', '{}')
+        True
+        >>> is_equal({}, {})
+        True
+        >>> is_equal([], [])
+        True
+        >>> is_equal({'language': 'python'}, {'language': 'python'})
+        True
+        >>> is_equal({'language': 'python'}, {'language': 'js'})
+        False
+        >>> is_equal(Array(), Array())
+        True
+    """
+    if type(obj1) != type(obj2):
+        return False
+    if not is_type(obj1, 'dict') or not is_type(obj2, 'list'):
+        return obj1 == obj2
+    if len(obj1) != len(obj2):
+        if is_type(obj1, 'list'):
+            for i in range(len(obj1)):
+                if not is_equal(obj1[i], obj2[i]):
+                    return False
+        if is_type(obj1, 'dict'):
+            if len(obj1.keys()) != len(obj2.keys()):
+                return False
+
+            for k1, k2 in zip(obj1.keys(), obj2.keys()):
+                if k1 != k2:
+                    return False
+                if not is_equal(obj1[k1], obj2[k2]):
+                    return False
+        if obj1 != obj2:
+            return False
+    return True
+
+def is_empty(value: any) -> bool:
+    """Checks if the value passed by parameter is empty.
+
+    Examples:
+        >>> is_empty('')
+        True
+        >>> is_empty(None)
+        True
+        >>> is_empty([])
+        True
+        >>> is_empty(Array())
+        True
+        >>> is_empty({})
+        True
+        >>> is_empty(())
+        True
+    """
+
+    if value == None or not len(value) > 0:
+        return True
+
+    return True

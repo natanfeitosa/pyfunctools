@@ -10,6 +10,9 @@ def flatten(arr:list, level=1) -> list:
     Note:
         Only accept whole levels or equal to 'all'
 
+    Raises:
+        ValueError : The level parameter entered is not integer or is different from 'all'
+
     Examples:
         >>> flatten([1, [2, [3, [4, 5]]]])
         [1, 2, [3, [4, 5]]]

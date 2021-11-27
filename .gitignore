@@ -9,3 +9,4 @@ env
 __pycache__/
 docs/_build/
 .replit
+make.py

@@ -39,5 +39,4 @@ setup(
     python_requires=">=3.7",
     url=about['__url__'],
     version=about['__version__'],
-    zip_safe=False,
 )
