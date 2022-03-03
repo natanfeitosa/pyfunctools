@@ -173,7 +173,7 @@ class Array(object):
         Returns:
             Array : A new array
         """
-        return Array(**self)
+        return Array(*self)
 
     def concat(self, *args):
         """Concatenate into Array
