@@ -19,5 +19,6 @@ Submodules
    pyfunctools.flatten
    pyfunctools.foreach
    pyfunctools.map
+   pyfunctools.memoize
    pyfunctools.reduce
    pyfunctools.utils
