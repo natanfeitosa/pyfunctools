@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyfunctools"
-version = "0.3.1"
+version = "0.4.0"
 description = "pyfunctools - Functional programming toolkit"
 authors = ["Natan Santos <natansantosapps@gmail.com>"]
 readme = "README.md"
