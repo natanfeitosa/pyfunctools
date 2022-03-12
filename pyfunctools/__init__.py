@@ -7,7 +7,7 @@ Pyfunctools is a module that provides functions, methods and classes that help i
 
 MAJOR = 0
 MINOR = 4
-PATCH = 0
+PATCH = 1
 
 def get_version(release:bool=False):
     """Get simple version or full version/release of pyfunc
@@ -106,20 +106,20 @@ class Array(object):
         return is_equal(self.to_list(), other.to_list())
 
     def __getitem__(self, index):
-        return self._values[index]
+        return self._values.__getitem__(index)
 
     def __setitem__(self, index, value):
         if index < len(self):
-            self._values[index] = value
+            self._values.__setitem__(index, value)
             return
-        elif index == len(self):
+        elif index == len(self) + 1:
             self._values.append(value)
             return
 
         raise IndexError('array assignment index out of range')
 
     def __len__(self) -> int:
-        return len(self._values)
+        return self._values.__len__()
 
     def __iter__(self):
         self._n = 0
