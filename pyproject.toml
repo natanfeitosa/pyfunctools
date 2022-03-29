@@ -8,9 +8,11 @@ authors = ["Natan Santos <natansantosapps@gmail.com>"]
 description = "pyfunctools - Functional programming toolkit"
 name = "pyfunctools"
 readme = "README.md"
-version = "0.5.0"
+version = "0.5.1"
+
 [tool.poetry.dependencies]
 python = "^3.8"
+
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
 
