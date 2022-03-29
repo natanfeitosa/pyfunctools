@@ -6,8 +6,8 @@ Pyfunctools is a module that provides functions, methods and classes that help i
 """
 
 MAJOR = 0
-MINOR = 4
-PATCH = 1
+MINOR = 5
+PATCH = 0
 
 def get_version(release:bool=False):
     """Get simple version or full version/release of pyfunc
