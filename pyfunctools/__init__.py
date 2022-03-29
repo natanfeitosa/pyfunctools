@@ -81,15 +81,19 @@ class Array(object):
         return isinstance(arr, Array)
     
     def __init__(self, *args, default=None):
-        
-        if len(args) == 1:
-            if args[0] == None and default == None:
-                raise NotImplementedError('No parameters')
 
-            elif isinstance(args[0], list):
-                self._values = args[0]
+        largs = len(args)
+        if  largs <= 1:
+            if largs < 1:
+                self._values = []
             else:
-                self._values = [default] * args[0]
+                if args[0] == None and default == None:
+                    raise NotImplementedError('No parameters')
+    
+                elif isinstance(args[0], list):
+                    self._values = args[0]
+                else:
+                    self._values = [default] * args[0]
         else:
             self._values = list(args)
 
