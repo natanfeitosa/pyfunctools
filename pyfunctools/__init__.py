@@ -132,6 +132,17 @@ class Array(object):
             return result
         else:
             raise StopIteration
+
+    def is_empty(self) -> bool:
+        """Check if Array is empty
+
+        Examples:
+            >>> Array().is_empty()
+            True
+            >>> Array(1, 2).is_empty()
+            False
+        """
+        return self.__len__() < 1
     
     def append(self, x:any):
         """Append a new item with value x to the end of the Array.
