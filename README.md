@@ -8,7 +8,7 @@ Pyfunctools is a module that provides functions, methods and classes that help i
 [![PyPI version](https://badge.fury.io/py/pyfunctools.svg)](https://badge.fury.io/py/pyfunctools)
 [![GitHub stars](https://img.shields.io/github/stars/natanfeitosa/pyfunctools.svg)](https://github.com/natanfeitosa/pyfunctools/stargazers)
 [![Open Source Helpers](https://www.codetriage.com/natanfeitosa/pyfunctools/badges/users.svg)](https://www.codetriage.com/natanfeitosa/pyfunctools)
-
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/natanfeitosa)
 
 ## Instalation
 
