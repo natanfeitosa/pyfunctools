@@ -10,7 +10,7 @@ Never made an open source contribution before? Wondering how contributions work 
 4.  Create a new branch for your fix using  **git checkout -b branch-name-here**.
 5.  Make the appropriate changes for the issue you are trying to address or the feature that you want to add.
 6. If you are creating new functionality, make a test file as well, or just run all the tests in case you are only editing existing functionality.
-7. Change package version correctly following **[Semver](https://semver.org/)**.
+7. Change the changelog file following [Keep A Changelog](https://keepachangelog.com/en/1.0.0/).
 8.  Use  **git add insert-paths-of-changed-files-here**  to add the file contents of the changed files to the "snapshot" git uses to manage the state of the project, also known as the index.
 9.  Use  **git commit -m "Insert a short message of the changes made here"**  to store the contents of the index with a descriptive message.
 10.  Push the changes to the remote repository using  **git push origin branch-name-here**.
