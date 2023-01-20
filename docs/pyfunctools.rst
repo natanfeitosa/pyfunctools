@@ -20,5 +20,6 @@ Submodules
    pyfunctools.foreach
    pyfunctools.map
    pyfunctools.memoize
+   pyfunctools.pipeline
    pyfunctools.reduce
    pyfunctools.utils

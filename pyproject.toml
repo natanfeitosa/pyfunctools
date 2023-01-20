@@ -1,20 +1,20 @@
 [build-system]
-build-backend = "poetry.core.masonry.api"
-requires = ["poetry-core>=1.0.0"]
+build-backend = 'poetry.core.masonry.api'
+requires = ['poetry-core>=1.0.0']
 
 [tool]
 [tool.poetry]
-authors = ["Natan Santos <natansantosapps@gmail.com>"]
-description = "pyfunctools - Functional programming toolkit"
-name = "pyfunctools"
-readme = "README.md"
-version = "0.5.1"
+authors = ['Natan Santos <natansantosapps@gmail.com>']
+description = 'pyfunctools - Functional programming toolkit'
+name = 'pyfunctools'
+readme = 'README.md'
+version = '0.5.1'
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = '^3.8'
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2"
+pytest = '^6.2'
 
 [[tool.poetry.packages]]
-include = "pyfunctools"
+include = 'pyfunctools'
