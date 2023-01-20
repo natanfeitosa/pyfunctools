@@ -1,5 +1,5 @@
 pyfunctools.memoize module
-======================
+==========================
 
 .. automodule:: pyfunctools.memoize
    :members:
