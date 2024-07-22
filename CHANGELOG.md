@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `flat_map.flat_map()` by [@LukeberryPi](https://github.com/LukeberryPi/) ([#6](https://github.com/natanfeitosa/pyfunctools/pull/6))
+
 ### Changed
 
 ### Fixed
