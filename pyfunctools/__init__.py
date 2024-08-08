@@ -31,6 +31,8 @@ def get_version(release:bool=False):
 
 from typing import List
 
+from .decorators import *
+
 from .chunk import chunk
 from .filter import filter
 from .foreach import forEach
