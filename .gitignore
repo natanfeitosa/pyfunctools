@@ -8,8 +8,8 @@ env
 .pytest_cache/
 __pycache__/
 docs/build/
-docs/_build/
-docs/_static/
+docs/source/_build/
+docs/source/_static/
 .replit
 replit.nix
 make.py

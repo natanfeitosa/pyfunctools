@@ -1,8 +1,10 @@
 def flat_map(arr: list, func) -> list:
     """Applies a function to each element in the list and flattens the result
+
     Args:
-        arr (list): a list to iterate
-        func (function): a callback function that returns a list for each element
+        arr ( list ): a list to iterate
+        func ( function ): a callback function that returns a list for each element
+
     Examples:
         >>> numbers = [1, 2, 3, 4]
         >>> flat_map(numbers, lambda x: [x, x * 2])

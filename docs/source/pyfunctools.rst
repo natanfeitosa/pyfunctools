@@ -6,6 +6,14 @@ pyfunctools package
    :undoc-members:
    :show-inheritance:
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyfunctools.decorators
+
 Submodules
 ----------
 
@@ -16,6 +24,7 @@ Submodules
    pyfunctools.chunk
    pyfunctools.compact
    pyfunctools.filter
+   pyfunctools.flat_map
    pyfunctools.flatten
    pyfunctools.foreach
    pyfunctools.map
