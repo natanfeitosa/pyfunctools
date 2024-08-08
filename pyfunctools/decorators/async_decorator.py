@@ -21,14 +21,17 @@ def async_decorator(func: typing.Callable[[typing.Any], typing.Any]):
 
     Example:
         >>> import time
+        >>>
         >>> @async_decorator
         ... def blocking_function(x):
         ...     import time
         ...     time.sleep(2)
         ...     return x * 2
+        >>>
         >>> async def main():
         ...     result = await blocking_function(5)
         ...     print(result)
+        >>>
         >>> asyncio.run(main())
         10
     """

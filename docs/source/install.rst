@@ -19,4 +19,3 @@ Or the command line:
 .. code:: bash
 
    easy_install pyfunctools
-

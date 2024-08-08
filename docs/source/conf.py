@@ -8,8 +8,8 @@
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
-# documentation root, use abspath to make it absolute, like shown here.
-
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+#
 import sys
 from os.path import dirname, abspath
 
@@ -23,10 +23,7 @@ sys.path.insert(1, dirname(dirname(abspath(__file__))))
 try:
     from pyfunctools import get_version
 except ModuleNotFoundError or ImportError:
-    try:
-        from ..pyfunctools import get_version
-    except ModuleNotFoundError or ImportError:
-        print('Deu erro')
+    from ..pyfunctools import get_version
 
 project = 'Pyfunctools'
 copyright = '2021, Natan Santos'
@@ -45,7 +42,8 @@ release = get_version(True)
 extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
-    'sphinx_rtd_theme'
+    'sphinx_rtd_theme',
+    'sphinx.ext.viewcode'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
