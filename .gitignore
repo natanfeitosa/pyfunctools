@@ -7,7 +7,9 @@ env
 .venv
 .pytest_cache/
 __pycache__/
+docs/build/
 docs/_build/
+docs/_static/
 .replit
 replit.nix
 make.py

@@ -9,13 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `flat_map.flat_map()` by [@LukeberryPi](https://github.com/LukeberryPi/) ([#6](https://github.com/natanfeitosa/pyfunctools/pull/6))
-
 ### Changed
 
 ### Fixed
 
 ### Removed
+
+## [v0.7.0](https://github.com/natanfeitosa/pyfunctools/compare/v0.7.0...v0.6.0) - 2024-08-08
+
+### Added
+
+- `flat_map.flat_map()` by [@LukeberryPi](https://github.com/LukeberryPi/) ([#6](https://github.com/natanfeitosa/pyfunctools/pull/6))
+- `async_decorator`
+- `retry_decorator`
+- `threaded_decorator`
+- `timing_decorator`
 
 ## [v0.6.0](https://github.com/natanfeitosa/pyfunctools/releases/tag/v0.6.0) - 2023-02-23
 

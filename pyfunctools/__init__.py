@@ -6,7 +6,7 @@ Pyfunctools is a module that provides functions, methods and classes that help i
 """
 
 MAJOR = 0
-MINOR = 6
+MINOR = 7
 PATCH = 0
 
 def get_version(release:bool=False):
@@ -17,9 +17,9 @@ def get_version(release:bool=False):
 
     Examples:
         >>> get_version()
-        '0.1'
+        '0.7'
         >>> get_version(True)
-        '0.1.0'
+        '0.7.0'
     """
 
     version = f'{MAJOR}.{MINOR}'
@@ -46,9 +46,9 @@ class Array(object):
 
     Raises:
         NotImplementedError: Error thrown when a None value is passed in the constructor
-    
+
     Examples:
-        >>> #Create an array/list 
+        >>> #Create an array/list
         >>> Array()
         <Array values=[] >
         >>> Array(4)
@@ -68,7 +68,7 @@ class Array(object):
             False
         """
         return isinstance(arr, list)
-    
+
     @staticmethod
     def is_array(arr: any) -> bool:
         """Test an object and return true if it is an instance of Array
@@ -81,7 +81,7 @@ class Array(object):
             False
         """
         return isinstance(arr, Array)
-    
+
     def __init__(self, *args, default=None):
 
         largs = len(args)
@@ -91,7 +91,7 @@ class Array(object):
             else:
                 if args[0] == None and default == None:
                     raise NotImplementedError('No parameters')
-    
+
                 elif isinstance(args[0], list):
                     self._values = args[0]
                 else:
@@ -149,7 +149,7 @@ class Array(object):
             False
         """
         return self.__len__() < 1
-    
+
     def append(self, x:any):
         """Append a new item with value x to the end of the Array.
 
@@ -183,7 +183,7 @@ class Array(object):
             [[1, 2, 3], [4, 5, 6]]
         """
         return chunk(self._values, size)
-    
+
     def clone(self):
         """Clone this array instance
 
@@ -197,7 +197,7 @@ class Array(object):
 
         Returns:
             Array : The Array instance being changed
-        
+
         Examples:
             >>> a = Array([1, 2])
             >>> a.concat(3)
@@ -214,12 +214,12 @@ class Array(object):
                 self._values.extend(i)
                 continue
             self._values.append(i)
-        
+
         return self
-    
+
     def count(self, x:any) -> int:
         """Return the number of times x appears in the array.
-        
+
         Examples:
             >>> Array(1, 2, 3).count(1)
             1
@@ -236,7 +236,7 @@ class Array(object):
 
         Returns:
             Array : The Array instance being changed
-        
+
         Examples:
             >>> a = Array([1, 2])
             >>> a.fill('a')
@@ -248,13 +248,13 @@ class Array(object):
         _arr = []
         for _ in range(len(self)):
             _arr.append(fill_with)
-        
+
         self._values = _arr
         return self
 
     def filter(self, func) -> list:
         """Method to filter a Aray item
-        
+
         Args:
             func ( function ) : The callback function takes an item and index, and must return a boolean
 
@@ -264,7 +264,7 @@ class Array(object):
             [2, 4]
         """
         return filter(self, func)
-    
+
     def forEach(self, func):
         """Calls a function for each item, passing the item itself and the index
 
@@ -293,16 +293,16 @@ class Array(object):
             True
         """
         return item in self._values
-    
+
     def index_of(self, obj: any) -> int:
         """The method returns the first index at which a given element can be found in the array, or -1 if it is not present.
 
         Args:
             obj ( any ) : Element to locate in the array.
-        
+
         Returns:
             int : -1 if not exists in the array
-        
+
         Examples:
             >>> array = Array(1, 2, 3)
             >>> array.index_of(4)
@@ -316,7 +316,7 @@ class Array(object):
 
     def map(self, func) -> list:
         """Function to create a new list based on callback function return
-        
+
         Args:
             func ( function ) : A callback function that will be executed every iteration and should return something for reduce assemble new list.
 
@@ -326,13 +326,13 @@ class Array(object):
             [2, 4]
         """
         return map(self, func)
-    
+
     def pop(self, pos:int=-1) -> any:
         """Removes the element at the specified position.
 
         Args:
             pos ( int, -1 ) : Position of the element to be removed and returned.
-        
+
         Examples:
             >>> array = Array(1, 2, 3)
             >>> array.pop()
@@ -346,7 +346,7 @@ class Array(object):
 
     def reduce(self, func, initial=[]):
         """Function to create a new object based on callback function return
-        
+
         Args:
             func ( function ) : A callback function that will be executed every iteration and should return something for reduce assemble new object
             initial ( any, [] ) : Initial return value.
@@ -364,18 +364,18 @@ class Array(object):
             ...
             >>> array.reduce(func)
             [2, 4, 6]
-        
+
         Note:
             if the callback function never returns anything, reduce will return the initial value itself
         """
         return reduce(self, func, initial)
-    
+
     def repetitions(self) -> dict:
         """Parses and returns all repetitions in the array.
 
         Returns:
             dict : A dictionary of type item: int(repetitions)
-        
+
         Examples:
             >>> Array(*'Pyfunctools').repetitions()
             {"P": 1, "y": 1, "f": 1, "u": 1, "n": 1, "c": 1, "t": 1, "o": 2, "l": 1, "s": 1}
@@ -402,7 +402,7 @@ class Array(object):
             <Array values=[3, 2, 1] >
         """
         return self._values.reverse()
-    
+
     def shift(self):
         """Removes the first element from an array and returns that removed element.
 
