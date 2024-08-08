@@ -44,7 +44,8 @@ release = get_version(True)
 # ones.
 extensions = [
     'sphinx.ext.napoleon',
-    'sphinx.ext.autodoc'
+    'sphinx.ext.autodoc',
+    'sphinx_rtd_theme'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
