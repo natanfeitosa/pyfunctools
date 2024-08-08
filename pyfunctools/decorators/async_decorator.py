@@ -1,3 +1,7 @@
+"""
+:no-index:
+"""
+
 import asyncio
 import typing
 from functools import wraps

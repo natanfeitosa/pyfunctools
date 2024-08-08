@@ -1,3 +1,7 @@
+"""
+:no-index:
+"""
+
 import time
 from functools import wraps
 
