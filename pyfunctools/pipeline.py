@@ -1,13 +1,16 @@
 from pyfunctools import Array
+from typing import Callable
 
-def pipeline(*funcs):
+def pipeline(*funcs: Callable) -> Callable:
     """Define a pipeline
     
     Args:
-        *funcs ( list[callable] ) : a list of callables to be called later
+        *funcs (Callable): a variable number of callables to be called sequentially later.
 
     Return:
-        last pipe return
+        Callable: A callable that, when invoked, executes the provided callables in sequence, 
+        passing the output of each as the input to the next, 
+        and returns the result of the last callable.
 
     Examples:
         >>> pipes = pipeline(
