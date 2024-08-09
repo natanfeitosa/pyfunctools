@@ -31,3 +31,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `pipeline.pipeline()` by [@natanfeitosa](https://github.com/natanfeitosa/) ([#2](https://github.com/natanfeitosa/pyfunctools/issues/2))
 
+## [Unreleased]
+
+### Update documentation
+
+- Updated `pipeline.pipeline()` documentation. ([#11](https://github.com/natanfeitosa/pyfunctools/issues/11))
