@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/natanfeitosa/pyfunctools/compare/v0.7.0...HEAD)
 
 ### Added
+- `timeout_decorator`
 
 ### Changed
 
